@@ -1,0 +1,142 @@
+<Product Revision="1" xmlns="https://github.com/OpenZWave/open-zwave">
+  <MetaData>
+    <MetaDataItem name="Name">Ring Alarm Keypad (2nd Gen)</MetaDataItem>
+    <MetaDataItem name="Description">Ring Alarm Keypad is a wireless accessory for the Ring Alarm system which provides users the ability to arm and disarm their system, view system status, and manage alarm conditions. After installing the Keypad and setting up the Keypad in the Ring app, perform arming and disarming actions as well as receive system indications for different status updates and events. The Ring Alarm Base Station is required to enable Keypad features and functions within the Ring app.</MetaDataItem>
+    <MetaDataItem name="OzwInfoPage">http://www.openzwave.com/device-database/XXXX:YYYY:ZZZZ</MetaDataItem>
+    <MetaDataItem name="ProductPage">https://products.z-wavealliance.org/products/3870</MetaDataItem>
+    <MetaDataItem name="ProductSupport">https://support.ring.com/hc/en-us/sections/360008861771-Keypad</MetaDataItem>
+    <MetaDataItem name="ProductPic">images/ring/KEYPAD-2V.png</MetaDataItem>
+    <MetaDataItem name="ProductManual">https://products.z-wavealliance.org/ProductManual/File?folder=&filename=product_documents/3870/Z-WaveUserManual_Keypad_700.pdf</MetaDataItem>
+    <MetaDataItem name="InclusionDescription">After powering on the device, press and hold the #1 button for ~3 seconds. Release the button and the device will enter Classic inclusion mode which implements both classic inclusion with a Node Information Frame, and Network Wide Inclusion. During Classic Inclusion mode, the green Connection LED will blink three times followed by a brief pause, repeatedly. When Classic inclusion times-out, the device will blink alternating red and green a few times.</MetaDataItem>
+    <MetaDataItem name="ExclusionDescription">Place the controller into Remove or “Z-Wave Exclusion” mode. Locate the pinhole reset button on the back of the device. Use a paper clip or similar object and tap the pinhole button. The device’s Connection LED turns on solid red to indicate the device was removed from the network.</MetaDataItem>
+    <MetaDataItem name="ResetDescription">Locate the pinhole reset button on the device. This is found on the back of the device after removing the back bracket. Using a paperclip or similar object, insert it into the pinhole, press and hold the button down for 10 seconds. The device’s Connection icon LED will rapidly blink green continuously for 10 seconds. After about 10 seconds, when the green blinking stops, release the button. The red LED will turn on solid to indicate the device was removed from the network.</MetaDataItem>
+    <MetaDataItem id="0301" name="ZWProductPage" type="0101">https://products.z-wavealliance.org/products/3870</MetaDataItem>
+    <MetaDataItem id="0301" name="FrequencyName" type="0101">U.S. / Canada / Mexico</MetaDataItem>
+    <MetaDataItem id="0301" name="Identifier" type="0101">Keypad v2</MetaDataItem>
+    <ChangeLog>
+      <Entry author="Jared Scott - jtscott@gmail.com" date="10 Dec 2020" revision="1">Initial Commit</Entry>
+    </ChangeLog>
+  </MetaData>
+  <CommandClass id="112">
+    <Value genre="config" index="1" label="Heartbeats" max="70" min="1" size="1" type="byte" units="minutes" value="70">
+      <Help>
+			This parameter is the number minutes between heartbeats. Heartbeats are automatic battery reports on a timer after the last event.
+			</Help>
+    </Value>
+    <Value genre="config" index="2" label="Application level retries" max="5" min="0" size="1" type="byte" units="" value="1">
+      <Help>
+			Number of application level retries attempted for messages either not ACKed or messages encapsulated via supervision get that did not receive a report.
+			</Help>
+    </Value>
+    <Value genre="config" index="3" label="Application Level Retry Base Wait Time Period" max="60" min="1" size="1" type="byte" units="seconds" value="5">
+      <Help>
+			The number base seconds used in the calculation for sleeping between retry messages.
+			</Help>
+    </Value>
+    <Value genre="config" index="4" label="Announcement Audio Volume" max="210" min="0" size="1" type="byte" units="" value="7">
+      <Help>
+			The volume of announcement audio files.
+			</Help>
+    </Value>
+    <Value genre="config" index="5" label="Key Tone Volume" max="10" min="0" size="1" type="byte" units="" value="6">
+      <Help>
+      Key Tone Volume
+			</Help>
+    </Value>
+    <Value genre="config" index="6" label="Siren Volume" max="10" min="0" size="1" type="byte" units="" value="10">
+      <Help>
+      Siren Volume
+			</Help>
+    </Value>
+    <Value genre="config" index="7" label="Long press emergency duration (seconds)" max="5" min="2" size="1" type="byte" units="seconds" value="3">
+      <Help>
+			TThis parameter allows a user to configure the duration in seconds for the hold time required to capture a long press. This includes Emergency Buttons + Mode Buttons (Police, Fire, Medical, Disarmed, Home, Away).
+			</Help>
+    </Value>
+    <Value genre="config" index="8" label="Long press number pad duration (seconds)" max="5" min="2" size="1" type="byte" units="seconds" value="3">
+      <Help>
+			This parameter allows a user to configure the duration in seconds for the hold time required to capture a long press. This includes Number Pad + Check & X (0-9, Check, X).
+			</Help>
+    </Value>
+    <Value genre="config" index="9" label="Proximity Display Timeout" max="30" min="0" size="1" type="byte" units="seconds" value="5">
+      <Help>
+			Timeout in seconds when proximity is detected and no input is received.
+			</Help>
+    </Value>
+    <Value genre="config" index="10" label="Button Press Display Timeout" max="30" min="0" size="1" type="byte" units="seconds" value="5">
+      <Help>
+			Timeout in seconds when any button is pressed, but a sequence is not completed and buttons are no longer being pressed.
+			</Help>
+    </Value>
+    <Value genre="config" index="11" label="Status Change Display Timeout" max="30" min="0" size="1" type="byte" units="seconds" value="5">
+      <Help>
+			Timeout in seconds when indicator command is received from the hub to change status.
+			</Help>
+    </Value>
+    <Value genre="config" index="12" label="Security Mode Brightness" max="100" min="0" size="1" type="byte" units="" value="100">
+      <Help>
+			Adjusts the brightness of the security mode buttons.
+			</Help>
+    </Value>
+    <Value genre="config" index="13" label="Key Backlight Brightness" max="100" min="0" size="1" type="byte" units="" value="100">
+      <Help>
+			Adjusts the brightness of the keypad backlight. Used for Key Backlight LEDs only Available settings: 0-100%.
+			</Help>
+    </Value>
+    <Value genre="config" index="14" label="Ambient Light Sensor Level" max="100" min="0" size="1" type="byte" units="" value="5">
+      <Help>
+			 Light threshold where keypad will stop backlighting if higher than.
+			</Help>
+    </Value>
+    <Value genre="config" index="15" label="Proximity On/OFF" max="1" min="0" size="1" type="byte" units="" value="1">
+      <Help>
+			 Turn On and Off the Proximity Detection.
+			</Help>
+    </Value>
+    </Value>
+    <Value genre="config" index="16" label="Ramp Time Config" max="255" min="0" size="1" type="byte" units="milliseconds" value="50">
+      <Help>
+			  Ramp time in milliseconds to turn the LEDs on/off. Applies to all LEDs on the keypad.
+			</Help>
+    </Value>
+    <Value genre="config" index="17" label="Low Battery Threshold" max="100" min="0" size="1" type="byte" units="%" value="15">
+      <Help>
+			  The percentage level at which the display would turn on the yellow battery indicator (whenever the display is on).
+			</Help>
+    </Value>
+    <Value genre="config" index="18" label="Language Set" max="31" min="0" size="1" type="byte" units="" value="30">
+      <Help>
+			  Bit number in the languages supported bitmask to set (30 US English).
+			</Help>
+    </Value>
+    <Value genre="config" index="19" label="Warn Battery Threshold" max="100" min="0" size="1" type="byte" units="%" value="5">
+      <Help>
+			  The percentage level at which the display would turn on the red battery indicator (whenever the display is on).
+			</Help>
+    </Value>
+    <Value genre="config" index="20" label="Supervisory Report Response Wait Time" max="5000" min="500" size="2" type="byte" units="milliseconds" value="1500">
+      <Help>
+			  The number of milliseconds waiting for a Supervisory Report response to a Supervisory Get encapsulated command from the device before attempting a retry.
+			</Help>
+    </Value>
+    <Value genre="config" index="21" label="System Security Mode Display" max="601" min="0" size="2" type="byte" units="" value="0">
+      <Help>
+			  (Always, Sometimes, Never): 601 = Always On, 1 - 600 = periodic interval, 0 = Always
+			</Help>
+    </Value>
+    <Value genre="config" index="22" label="Languages Supported (Get)" max="" min="" size="4" type="byte" units="" value="">
+      <Help>
+			  Returns bitmask of languages supported. Bits set to 1 indicate that the language is supported.
+			</Help>
+    </Value>
+  <CommandClass id="113">
+    <Compatibility>
+      <GetSupported>false</GetSupported>
+    </Compatibility>
+  </CommandClass>
+  <CommandClass id="133">
+    <Associations num_groups="1">
+       <Group index="1" label="Lifeline" max_associations="5"/>
+    </Associations>
+  </CommandClass>
+</Product>
